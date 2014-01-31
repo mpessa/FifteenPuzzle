@@ -22,6 +22,7 @@
 		D54F7FBB189C496300A85C21 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54F7F9A189C496300A85C21 /* UIKit.framework */; };
 		D54F7FC3189C496300A85C21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D54F7FC1189C496300A85C21 /* InfoPlist.strings */; };
 		D54F7FC5189C496300A85C21 /* PuzzleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D54F7FC4189C496300A85C21 /* PuzzleTests.m */; };
+		D54F7FD0189C549900A85C21 /* PuzzleBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = D54F7FCF189C549900A85C21 /* PuzzleBoard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		D54F7FC0189C496300A85C21 /* PuzzleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PuzzleTests-Info.plist"; sourceTree = "<group>"; };
 		D54F7FC2189C496300A85C21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D54F7FC4189C496300A85C21 /* PuzzleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PuzzleTests.m; sourceTree = "<group>"; };
+		D54F7FCE189C549900A85C21 /* PuzzleBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleBoard.h; sourceTree = "<group>"; };
+		D54F7FCF189C549900A85C21 /* PuzzleBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleBoard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				D54F7FAB189C496300A85C21 /* Main_iPad.storyboard */,
 				D54F7FAE189C496300A85C21 /* PuzzleViewController.h */,
 				D54F7FAF189C496300A85C21 /* PuzzleViewController.m */,
+				D54F7FCE189C549900A85C21 /* PuzzleBoard.h */,
+				D54F7FCF189C549900A85C21 /* PuzzleBoard.m */,
 				D54F7FB1189C496300A85C21 /* Images.xcassets */,
 				D54F7F9D189C496300A85C21 /* Supporting Files */,
 			);
@@ -256,6 +261,7 @@
 			files = (
 				D54F7FA7189C496300A85C21 /* PuzzleAppDelegate.m in Sources */,
 				D54F7FA3189C496300A85C21 /* main.m in Sources */,
+				D54F7FD0189C549900A85C21 /* PuzzleBoard.m in Sources */,
 				D54F7FB0189C496300A85C21 /* PuzzleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
