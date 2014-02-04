@@ -15,31 +15,31 @@
 }
 
 -(int)getTileAtRow:(int)row Column:(int)col{
-    
+    return -1;
 }
 
--(void)getRow:(int*)row Column:(int*)col ForTitle:(int)tile{
+-(void)getRow:(int*)row Column:(int*)col ForTile:(int)tile{
     
 }
 
 -(BOOL)isSolved{
-    
+    return NO;
 }
 
 -(BOOL)canSlideTileUpAtRow:(int)row Column:(int)col{
-    
+    return NO;
 }
 
 -(BOOL)canSlideTileDownAtRow:(int)row Column:(int)col{
-    
+    return NO;
 }
 
 -(BOOL)canSlideTileLeftAtRow:(int)row Column:(int)col{
-    
+    return NO;
 }
 
 -(BOOL)canSlideTileRightAtRow:(int)row Column:(int)col{
-    
+    return NO;
 }
 
 -(void)slideTileAtRow:(int)row Column:(int)col{

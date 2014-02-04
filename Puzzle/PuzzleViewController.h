@@ -7,15 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PuzzleBoard.h"
 
 @interface PuzzleViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIView *boardView;
+@property (strong, nonatomic) PuzzleBoard *board;
 
 - (IBAction)tileSelected:(UIButton *)sender;
 - (IBAction)scrambleTiles:(id)sender;
 
 -(id)arrangeBoardView;
--(int)getTileAtRow:(int)row Column:(int)col;
+//-(int)getTileAtRow:(int)row Column:(int)col;
 
 @end

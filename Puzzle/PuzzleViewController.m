@@ -13,16 +13,16 @@
 
 @end
 
-@implementation PuzzleViewController
-
--(id)init{
-    
+@implementation PuzzleViewController{
+    int NUM_SHUFFLES;
 }
 
 - (void)viewDidLoad
 {
 	// Do any additional setup after loading the view, typically from a nib.
     [super viewDidLoad]; // create/init board
+    self.board = [[PuzzleBoard alloc] init];
+    NUM_SHUFFLES = 150;
     [self.board scramble:NUM_SHUFFLES]; // scramble tiles
     [self arrangeBoardView]; // sync view with model
 }
@@ -51,7 +51,7 @@
     [self arrangeBoardView];
 }
 
--(id)arrangeBoardView{
+- (id)arrangeBoardView{
     const CGRect boardBounds = self.boardView.bounds;
     const CGFloat tileWidth = boardBounds.size.width / 4;
     const CGFloat tileHeight = boardBounds.size.height / 4;

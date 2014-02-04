@@ -14,7 +14,7 @@
 
 -(int)getTileAtRow:(int)row Column:(int)col;
 
--(void)getRow:(int*)row Column:(int*)col ForTitle:(int)tile;
+-(void)getRow:(int*)row Column:(int*)col ForTile:(int)tile;
 
 -(BOOL)isSolved;
 
