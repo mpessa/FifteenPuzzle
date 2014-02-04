@@ -10,6 +10,8 @@
 
 @interface PuzzleBoard : NSObject
 
+-(id)initWithState;
+
 -(void)scramble:(int)n;
 
 -(int)getTileAtRow:(int)row Column:(int)col;

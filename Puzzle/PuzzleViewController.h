@@ -17,7 +17,6 @@
 - (IBAction)tileSelected:(UIButton *)sender;
 - (IBAction)scrambleTiles:(id)sender;
 
--(id)arrangeBoardView;
-//-(int)getTileAtRow:(int)row Column:(int)col;
+-(void)arrangeBoardView;
 
 @end

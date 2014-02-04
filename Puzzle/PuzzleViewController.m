@@ -17,8 +17,7 @@
     int NUM_SHUFFLES;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
 	// Do any additional setup after loading the view, typically from a nib.
     [super viewDidLoad]; // create/init board
     self.board = [[PuzzleBoard alloc] init];
@@ -27,8 +26,7 @@
     [self arrangeBoardView]; // sync view with model
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -47,11 +45,12 @@
 }
 
 - (IBAction)scrambleTiles:(id)sender {
+    NSLog(@"New game");
     [self.board scramble:NUM_SHUFFLES];
     [self arrangeBoardView];
 }
 
-- (id)arrangeBoardView{
+- (void)arrangeBoardView{
     const CGRect boardBounds = self.boardView.bounds;
     const CGFloat tileWidth = boardBounds.size.width / 4;
     const CGFloat tileHeight = boardBounds.size.height / 4;
