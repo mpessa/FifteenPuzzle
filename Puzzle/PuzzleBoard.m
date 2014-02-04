@@ -10,6 +10,20 @@
 
 @implementation PuzzleBoard
 
+-(id)initWithState{
+    int state[4][4];
+    int x = 1;
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 4; j++){
+            state[i][j] = x;
+            NSLog(@"row: %d, col: %d, val: %d", i, j, x);
+            x++;
+        }
+    }
+    state[3][3] = 0;
+    return self;
+}
+
 -(void)scramble:(int)n{
     
 }
