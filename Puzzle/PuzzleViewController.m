@@ -42,6 +42,21 @@
         buttonFrame.origin.y = (row-1)*buttonFrame.size.height;
         [UIView animateWithDuration:0.5 animations:^{sender.frame = buttonFrame;}];
     }
+    else if([self.board canSlideTileDownAtRow:row Column:col]){
+        [self.board slideTileAtRow:row Column:col];
+        buttonFrame.origin.y = (row+1)*buttonFrame.size.height;
+        [UIView animateWithDuration:0.5 animations:^{sender.frame = buttonFrame;}];
+    }
+    else if([self.board canSlideTileLeftAtRow:row Column:col]){
+        [self.board slideTileAtRow:row Column:col];
+        buttonFrame.origin.x = (col-1)*buttonFrame.size.height;
+        [UIView animateWithDuration:0.5 animations:^{sender.frame = buttonFrame;}];
+    }
+    else if([self.board canSlideTileRightAtRow:row Column:col]){
+        [self.board slideTileAtRow:row Column:col];
+        buttonFrame.origin.x = (col+1)*buttonFrame.size.height;
+        [UIView animateWithDuration:0.5 animations:^{sender.frame = buttonFrame;}];
+    }
 }
 
 - (IBAction)scrambleTiles:(id)sender {
