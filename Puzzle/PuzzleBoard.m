@@ -33,7 +33,8 @@
 
 -(void)scramble:(int)n{
     for(int i = 0; i < n; i++){
-        int move = arc4random() % 15; // Not sure about this line yet
+        int move = (arc4random() % 14) + 1; // This seems to look correct
+        NSLog(@"%d", move);
         
     }
 }
