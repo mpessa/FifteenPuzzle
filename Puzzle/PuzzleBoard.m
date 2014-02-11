@@ -37,7 +37,7 @@
         BOOL left = NO, right = NO, up = NO, down = NO;
         while(left == NO && right == NO && up == NO && down ==NO){
             int move = (arc4random() % 14) + 1; // This seems to look correct
-            NSLog(@"%d", move);
+            //NSLog(@"%d", move);
             [self getRow:&row Column:&col ForTile:move];
             if([self canSlideTileUpAtRow:row Column:col]){
                 up = YES;
@@ -57,7 +57,7 @@
 }
 
 -(int)getTileAtRow:(int)row Column:(int)col{
-    NSLog(@"%d", state[row][col]);
+    //NSLog(@"%d", state[row][col]);
     return state[row][col]; // Return the tile number at the row and column
 }
 
@@ -65,7 +65,7 @@
     for(int i = 0; i < 4; i++){
         for(int j = 0; j < 4; j++){
             if(tile == state[i][j]){
-                NSLog(@"Found at row: %d, col: %d", i, j);
+                //NSLog(@"Found at row: %d, col: %d", i, j);
                 // Need to set the row and col that were passed in. Pointers? Yay! It worked!
                 *row = i;
                 *col = j;
@@ -87,14 +87,15 @@
                 }
             }
         }
+        return YES;
     }
-    return YES;
+    return NO;
 }
 
 -(BOOL)canSlideTileUpAtRow:(int)row Column:(int)col{
     if(row != 0){ // Make sure that the current row is not the top row
         if(state[row-1][col] == 0){ // Check that the spot directly above is 0
-            NSLog(@"Can move up");
+            //NSLog(@"Can move up");
             return YES; // Return YES if it is
         }
     }
@@ -104,7 +105,7 @@
 -(BOOL)canSlideTileDownAtRow:(int)row Column:(int)col{
     if(row != 3)
     if(state[row+1][col] == 0){
-        NSLog(@"Can move down");
+        //NSLog(@"Can move down");
         return YES;
     }
     return NO;
@@ -113,7 +114,7 @@
 -(BOOL)canSlideTileLeftAtRow:(int)row Column:(int)col{
     if(col != 0)
     if(state[row][col-1] == 0){
-        NSLog(@"Can move left");
+        //NSLog(@"Can move left");
         return YES;
     }
     return NO;
@@ -122,7 +123,7 @@
 -(BOOL)canSlideTileRightAtRow:(int)row Column:(int)col{
     if(col != 3)
     if(state[row][col+1] == 0){
-        NSLog(@"Can move right");
+        //NSLog(@"Can move right");
         return YES;
     }
     return NO;
@@ -142,6 +143,8 @@
     temp = state[tempRow][tempCol]; // Usual easy swap
     state[tempRow][tempCol] = state[row][col];
     state[row][col] = temp;
+    if([self isSolved])
+        NSLog(@"Puzzle solved");
 }
 
 @end

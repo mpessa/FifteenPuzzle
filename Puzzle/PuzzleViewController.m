@@ -21,6 +21,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     [super viewDidLoad]; // create/init board
     self.board = [[PuzzleBoard alloc] init];
+    //UIImage* image = [UIImage imageNamed:@"cat.png"];
+    //[self setBackgroundImageOfButtons:image]; //Maybe later?
     NUM_SHUFFLES = 150;
     [self.board scramble:NUM_SHUFFLES]; // scramble tiles
     [self arrangeBoardView]; // sync view with model
@@ -33,7 +35,7 @@
 
 - (IBAction)tileSelected:(UIButton *)sender {
     const int tag = [sender tag];
-    NSLog(@"tileSelected: %d", tag);
+    //NSLog(@"tileSelected: %d", tag);
     int row, col;
     [self.board getRow:&row Column:&col ForTile:tag];
     CGRect buttonFrame = sender.frame;
