@@ -33,9 +33,26 @@
 
 -(void)scramble:(int)n{
     for(int i = 0; i < n; i++){
-        int move = (arc4random() % 14) + 1; // This seems to look correct
-        NSLog(@"%d", move);
-        
+        int row, col;
+        BOOL left = NO, right = NO, up = NO, down = NO;
+        while(left == NO && right == NO && up == NO && down ==NO){
+            int move = (arc4random() % 14) + 1; // This seems to look correct
+            NSLog(@"%d", move);
+            [self getRow:&row Column:&col ForTile:move];
+            if([self canSlideTileUpAtRow:row Column:col]){
+                up = YES;
+            }
+            else if([self canSlideTileDownAtRow:row Column:col]){
+                down = YES;
+            }
+            else if([self canSlideTileLeftAtRow:row Column:col]){
+                left = YES;
+            }
+            else if([self canSlideTileRightAtRow:row Column:col]){
+                right = YES;
+            }
+        }
+        [self slideTileAtRow:row Column:col];
     }
 }
 
@@ -58,14 +75,20 @@
 }
 
 -(BOOL)isSolved{
+    int x = 1;
     if(state[3][3] == 0){
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
-                
+                if(i != 3 && j != 3){
+                    if(state[i][j] != x){
+                        return NO;
+                    }
+                    x++;
+                }
             }
         }
     }
-    return NO;
+    return YES;
 }
 
 -(BOOL)canSlideTileUpAtRow:(int)row Column:(int)col{
