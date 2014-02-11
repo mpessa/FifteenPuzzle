@@ -23,7 +23,7 @@
     self.board = [[PuzzleBoard alloc] init];
     //UIImage* image = [UIImage imageNamed:@"cat.png"];
     //[self setBackgroundImageOfButtons:image]; //Maybe later?
-    NUM_SHUFFLES = 150;
+    NUM_SHUFFLES = 15;
     [self.board scramble:NUM_SHUFFLES]; // scramble tiles
     [self arrangeBoardView]; // sync view with model
 }
